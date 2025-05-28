@@ -15,6 +15,23 @@ public class SafelyTest {
     }
 
     @Test
+    void testSafelyRunCustomThrowable_caught() {
+        Assertions.assertDoesNotThrow(() -> {
+            Safely.run(() -> {
+                throw new IllegalArgumentException("on purpose");
+            }, Throwable.class);
+        });
+    }
+
+    @Test
+    void testSafelyRunCustomThrowable_notCaught() {
+        Assertions.assertThrows(Exception.class,
+                () -> Safely.run(() -> {
+                    throw new Exception("on purpose");
+                }, IllegalArgumentException.class).isSuccess());
+    }
+
+    @Test
     void testSafelyRun_isSuccess() {
         Result<Void> result = Safely.run(() -> {});
         Assertions.assertTrue(result.isSuccess());

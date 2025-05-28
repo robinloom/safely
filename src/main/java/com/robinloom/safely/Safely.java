@@ -7,8 +7,8 @@ public final class Safely {
     public static <T> Result<T> call(CheckedSupplier<T> supplier) {
         try {
             return Result.success(supplier.get());
-        } catch (Throwable t) {
-            return Result.failure(t);
+        } catch (Exception e) {
+            return Result.failure(e);
         }
     }
 
@@ -28,8 +28,8 @@ public final class Safely {
         try {
             runnable.run();
             return Result.success(null);
-        } catch (Throwable t) {
-            return Result.failure(t);
+        } catch (Exception e) {
+            return Result.failure(e);
         }
     }
 
