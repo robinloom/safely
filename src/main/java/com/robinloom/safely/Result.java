@@ -1,5 +1,7 @@
 package com.robinloom.safely;
 
+import java.util.function.Function;
+
 public class Result<T> {
 
     private final T value;
@@ -20,5 +22,21 @@ public class Result<T> {
 
     public boolean isSuccess() {
         return error == null;
+    }
+
+    public boolean isFailure() {
+        return error != null;
+    }
+
+    public T get() {
+        return value;
+    }
+
+    public T orElse(T other) {
+        return isSuccess() ? value : other;
+    }
+
+    public <R> Result<R> map(Function<? super T, ? extends R> mapper) {
+        return isSuccess() ? success(mapper.apply(value)) : failure(error);
     }
 }
