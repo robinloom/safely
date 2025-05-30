@@ -1,4 +1,6 @@
 # Safely
+![Build And Test](https://github.com/robinloom/safely/actions/workflows/build.yml/badge.svg)
+![Maven Central Version](https://img.shields.io/maven-central/v/com.robinloom/safely)
 
 **Safely** is a lightweight Java utility library that makes exception handling more elegant and expressive. It wraps operations in a `Result<T>` type, so you can handle errors without cluttering your code with try-catch blocks.
 
