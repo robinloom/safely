@@ -24,9 +24,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/robinloom/safely.git</connection>
-        <developerConnection>scm:git:https://github.com/robinloom/safely.git</developerConnection>
-        <url>https://github.com/robinloom/safely</url>
+        <connection>scm:git:git@github.com:robinloom/safely.git</connection>
+        <developerConnection>scm:git:git@github.com:robinloom/safely.git</developerConnection>
+        <url>git@github.com:robinloom/safely.git</url>
         <tag>safely-1.0.0</tag>
     </scm>
 
